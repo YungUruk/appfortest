@@ -1,0 +1,17 @@
+---
+
+ - fruits:
+   - apple
+   - orange
+   - mango
+
+ - vegetables:
+   - carrot
+   - tomat
+
+ - vova:
+     nick: vovan
+     age: 21
+     sex: male
+
+ fruits: ['apple', 'orange', 'mango']

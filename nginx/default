@@ -1,0 +1,16 @@
+server {
+    listen 80;
+        root /app;
+       
+    location / {
+        proxy_pass http://php-apache:80;
+    }
+    
+    location /music {
+        alias /app/music;
+        add_header Content-Type text/plain;
+    }
+    location /news {
+        proxy_pass https://news.google.com;
+    }
+}

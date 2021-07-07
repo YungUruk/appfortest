@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  php-apache:
+    image: php:7.2-apache
+    ports: 
+      - "9000:9000"
+    volumes:
+      - ./apache/site:/var/www/html/
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    links:
+      - php-apache
+    volumes:
+     # - ./nginx/default:/etc/nginx/sites-available/default
+     # - ./nginx/default:/etc/nginx/sites-enabled/default
+      - ./nginx/default:/etc/nginx/conf.d/default.conf
+      - ./apache/site:/app
